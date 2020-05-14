@@ -5,7 +5,6 @@ import numpy as np
 import pickle
 import os
 from datetime import datetime
-import gzip
 import json
 from collections import OrderedDict
 import copy
@@ -80,8 +79,8 @@ def key_release(k, mod):
 
 def store_data(data, datasets_dir="./data"):
     os.makedirs(datasets_dir, exist_ok=True)
-    data_file = os.path.join(datasets_dir, "data-%s.pkl.gzip" % datetime.now().strftime("%Y%m%d-%H%M%S"))
-    with gzip.open(data_file, 'wb') as f:
+    data_file = os.path.join(datasets_dir, "data-%s.pkl" % datetime.now().strftime("%Y%m%d-%H%M%S"))
+    with open(data_file, 'wb') as f:
         pickle.dump(data, f)
 
 
@@ -125,6 +124,7 @@ if __name__ == "__main__":
         episode_samples = copy.deepcopy(good_samples)
         state = env.reset()
         restart = False
+        steps_count = 0
         # State loop
         while True:
             next_state, r, done, info = env.step(a[:3])
@@ -142,6 +142,7 @@ if __name__ == "__main__":
             episode_samples["actions_onehot"].append(actions_probs)
 
             state = next_state
+            steps_count += 1
 
             env.render()
             if done or restart:
@@ -150,6 +151,7 @@ if __name__ == "__main__":
         if done and should_collect:
             # We done if we are here
             good_samples = copy.deepcopy(episode_samples)
+            print('Steps gone: ', steps_count)
             print('... saving data')
             store_data(good_samples, "./data")
             save_results(episode_reward, "./results")
