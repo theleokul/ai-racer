@@ -6,7 +6,7 @@
 
 ## To run this program
 
-0. Install required packages: **numpy, tensorflow 2.\*, gym**
+0. Install required packages: **numpy, tensorflow 2.\*, gym, Box2D**
 1. Clone this repo  
 2. `cd` into it
 3. Run  
