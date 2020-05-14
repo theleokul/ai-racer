@@ -35,6 +35,6 @@ In simple terms:
 
 1. Normal style is the style of a sober adequate driver
 2. Cutter style is the style of a cunning driver, striving to cut corners of the track
-3. Drifter style is the style of a crazy driver who cannot live without drifting.
+3. Drifter style is the style of a crazy driver who cannot live without drifting
 
-![Neural networks architectures](image.png)
+![Neural networks architectures](img/net_architectures.png)
