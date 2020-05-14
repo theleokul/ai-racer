@@ -1,8 +1,12 @@
 # AI racer
 
+Сreated jointly with @megavaz
+
+![Example of gameplay](img/example.png)
+
 ## To run this program
 
-0. Install required packages: **numpy, tensorflow, gym**
+0. Install required packages: **numpy, tensorflow 2.\*, gym**
 1. Clone this repo  
 2. `cd` into it
 3. Run  
