@@ -20,11 +20,11 @@ python3 racer.py
 You can also change driving style and number of frames to be proceed by the model with flags:
   
 ```bash
-python3 racer.py --style [0 | 1 | 2]
+python3 racer.py [--style 0 | 1 | 2]
 ```
 
 ```bash
-python3 racer.py --iterations [3000]
+python3 racer.py [--iterations 3000]
 ```
 
 Detailed explanations are available with command:
